@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" type="image/png" href="assets/icon.jpg" />
+  <title>Uncovering Grounding IDs</title>
+  <meta property="og:title" content="UNCOVERING GROUNDING IDS: HOW EXTERNAL CUES SHAPE MULTI-MODAL BINDING">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vlm-cross-modal-reps.github.io">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQ2WVP2RSN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RQ2WVP2RSN');
+  </script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/custom.css">
+  <link rel="stylesheet" href="./static/css/fonts.css">
+  <script src="./static/js/interactions.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body" style="padding: 3rem 1.5rem 0.5rem 1.5rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">UNCOVERING GROUNDING IDS:<br> HOW EXTERNAL CUES SHAPE MULTI-MODAL BINDING</h1>
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block">
+              <a href="https://graceluo.net" target="_blank">Grace Luo</a>
+            </span>
+            <span class="author-block">
+              <a href="http://people.eecs.berkeley.edu/~trevor" target="_blank">Trevor Darrell</a>
+            </span>
+            <span class="author-block">
+              <a href="https://www.amirbar.net" target="_blank">Amir Bar</a>
+            </span> -->
+
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/hosein-hasani/" target="_blank">Hossein Hasani</a>
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/amirmohammad-izadi-05b80b337/" target="_blank">Amirmohammad Izadi</a>
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/fatemeh-askari-4045b9235/" target="_blank">Fateme Askari</a>
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/mobinbagherian/" target="_blank">Mobin Bagherian</a>
+            </span>
+            <span class="author-block">
+              <a href="https://sadegh-moh.github.io/" target="_blank">Sadegh Mohammadian</a>
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/mohammad-izadi-3b9930125/" target="_blank">Mohammad Izadi</a>
+            </span>
+            <span class="author-block">
+              <a href="https://sharif.edu/~soleymani/" target="_blank">Mahdieh Soleymani Baghshah</a>
+            </span>
+
+          </div>
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Department of Computer Engineering</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Sharif University of Technology</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <br>
+            <span class="author-block"><b>ICML 2026</b></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2509.24072" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/sharif-ml-lab/GroundingID/code" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section" style="padding-top: 1rem;">
+  <div class="container is-max-desktop">
+    <div class="is-centered has-text-centered">
+      <p>
+        <b>TLDR:</b> #TODO<br>
+      </p>
+      <br>
+      Image or video here
+      <div style="max-width: 720px;" class="max-width-content">
+        <video id="teaser" muted playsinline onclick="playVideo('teaser')">
+          <source src="assets/teaser.m4v" type="video/mp4">
+        </video>
+        <br>
+        <button class="button is-white btn-teaser" onclick="playVideo('teaser')">
+          <img style="margin-right: 5px;" src="assets/hand.svg" />
+          Click to animate figure
+        </button>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Abstract</h2>
+        <div class="content has-text-left">
+          <p>
+          Large vision-language models (LVLMs) show strong performance across multimodal benchmarks but remain limited in structured reasoning and precise grounding.
+          Recent work has demonstrated that adding simple visual structures, such as partitions and annotations, improves accuracy, yet the internal mechanisms underlying these gains remain unclear.
+          We investigate this phenomenon and propose the concept of <em>Grounding IDs</em>, latent identifiers induced by external cues that bind objects to their designated partitions across modalities.
+          Through representation analysis, we find that these identifiers emerge as robust within-partition alignment in embedding space and reduce the modality gap between image and text.
+          Causal interventions further confirm that these identifiers mediate binding between objects and symbolic cues.We show that Grounding IDs strengthen attention between related components, which in turn improves cross-modal grounding and reduces hallucinations.
+          Taken together, our results identify Grounding IDs as a key symbolic mechanism explaining how external cues enhance multimodal binding, offering both interpretability and practical improvements in robustness.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Grounding IDs: Partition-Based Binding for Better LVLM Reliability</h2>
+        <div class="max-width-content">
+        
+
+
+          <br>
+          <div class="content has-text-left">
+            <p>
+              LVLMs have internal grounding capabilities and achieve strong performance on many benchmarks. However, they still struggle with structured reasoning, precise grounding, and avoiding hallucinations.
+              Interestingly, very simple input modifications — like adding grids, lines, or annotations — can make these models much more reliable. Yet, it has remained unclear why such simple scaffolds help.
+              We introduce Grounding IDs: latent identifiers triggered by external cues that bind objects to specific partitions across modalities. For example, when an image is divided with visual symbols (#, @, $) and the prompt refers to them, the model creates identifiers that link each symbol to its region.
+              These identifiers then propagate through attention and embeddings, strengthening the connection between image and text.
+            </p>
+          </div>
+
+          <img src="assets/graphical_abstract.png" 
+          alt="Graphical abstract of Grounding IDs" 
+          class="max-width-results" />
+
+          <!-- <div class="finding-box">
+            Text here!!</div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Attention and Alignment: Evidence for Grounding IDs</h2>
+        <div class="max-width-content">
+
+          
+          <br>
+          <div class="content has-text-left">
+            <p>
+              To probe why external cues improve reasoning, we analyzed how LVLMs process partitioned inputs. Using a synthetic dataset of objects with added symbols and dividing lines, we compared baseline and structured conditions.
+              Attention maps revealed a clear difference: with cues, attention became strongly concentrated within partitions, both in visual–visual and text–visual interactions, indicating systematic binding. Embedding analysis provided complementary evidence.
+              Measuring cosine similarity between matched visual and textual tokens showed that structured inputs consistently achieved higher cross-modal alignment, particularly in later layers of the model.
+              Notably, the external symbols themselves reached even stronger alignment than the objects they marked. Together, these results show that simple cues induce Grounding IDs that propagate through attention and embeddings, effectively reducing the modality gap and reinforcing object–cue binding.
+            </p>
+          </div>
+
+          <img src="assets/attention_main_fig.png" 
+          alt="" 
+          class="max-width-results" />
+
+          <img src="assets/alignment_main_fig.png" 
+          alt="" 
+          class="max-width-results" />
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Causal Mediation: Grounding IDs Drive Symbol–Object Binding</h2>
+        <div class="max-width-content">
+
+          <br>
+          <div class="content has-text-left">
+            <p>
+              To move beyond correlation, we applied activation swapping experiments to test whether Grounding IDs causally mediate symbol–object binding. Using a simplified dataset with four symbol-labeled rows, we swapped object activations between contexts while keeping their associated symbols intact.
+              The model’s predictions consistently followed the transferred bindings rather than the local host symbols: accuracy dropped from 1.00 to 0.02 when measured against host partitions but remained at 0.98 when evaluated against transferred bindings.
+              Layerwise analysis confirmed that this causal signal emerges in later layers, with logit lens revealing a shift toward predicting the intervened grounded objects, and specific attention heads—most prominently in layer 16—reliably favoring grounded over local tokens.
+              Further analysis showed that Grounding IDs are structured by their associated symbols: differences between symbol activations strongly align with differences between induced Grounding IDs.
+              Strikingly, even when the target image contained an entirely different set of symbols, querying with the source symbols still retrieved the correct transferred objects with 0.86 accuracy, far above chance.
+
+            </p>
+          </div>
+
+          <img src="assets/activation_swap.png" 
+          alt="" 
+          class="max-width-results" />
+
+          <img src="assets/cma_layer_head.png" 
+          alt="" 
+          class="max-width-results" />
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Reducing Hallucinations in LVLMs: The Power of Grounding IDs</h2>
+        <div class="max-width-content">
+
+          <br>
+          <div class="content has-text-left">
+            <p>
+              To investigate whether external cues can help LVLMs stay grounded and reduce hallucinations during long responses, we measured cross-attention between generated tokens and image patches while using structured external cues.
+              In line with prior work that links hallucinations to the decay of visual attention, we observed that attention to the image decreased over time in the baseline model, with later tokens attending less to the image.
+              However, in the structured input setup, the model maintained higher initial attention and exhibited a slower rate of decline, suggesting that external cues help sustain visual grounding throughout the generation process.
+              When evaluating hallucination metrics on the synthetic datasets, structured cues led to significant improvements across accuracy, precision, recall, and F1 scores, particularly in precision, which is crucial for avoiding incorrect object mentions.
+              As the number of objects increased, the structured method consistently outperformed the baseline in all metrics, and the performance gap widened as object complexity grew. This finding demonstrates that external structure improves the faithfulness of generated descriptions.
+              On large-scale benchmarks like MS-COCO, the structured approach achieved substantial reductions in CHAIR metrics (both sentence- and instance-level hallucination rates) compared to the baseline and outperformed specialized methods such as VCD, OPERA, and Sparc, all while maintaining minimal computational overhead.
+              Notably, this simple method also works effectively on closed-source models like GPT-4 and Gemini-2.5-Pro, positioning it as a strong, scalable solution for hallucination reduction in LVLMs.
+            </p>
+          </div>
+
+          <!-- <img src="assets/attention_decay_synthetic.png" 
+          alt="" 
+          class="max-width-results" />
+
+          <img src="assets/attention_decay_coco.png" 
+          alt="" 
+          class="max-width-results" /> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<hr>
+<section class="section">
+
+  <div class="container is-max-desktop content">
+    <!-- <h2 class="title is-4">Relevant Readings</h2>
+    <p>
+      If you like this work, these other projects might also interest you.
+    </p>
+    <ul>
+      <li>
+        <p>
+        </p>
+      </li>
+    </ul> -->
+
+
+
+    <h2 class="title is-4">BibTeX</h2>
+    <pre><code>
+    @misc{hasani2025uncoveringgroundingidsexternal,
+      title={Uncovering Grounding IDs: How External Cues Shape Multi-Modal Binding}, 
+      author={Hosein Hasani and Amirmohammad Izadi and Fatemeh Askari and Mobin Bagherian and Sadegh Mohammadian and Mohammad Izadi and Mahdieh Soleymani Baghshah},
+      year={2025},
+      eprint={2509.24072},
+      archivePrefix={arXiv},
+      url={https://arxiv.org/abs/2509.24072}, 
+    }
+    </code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The website template is based on the
+            <a href="https://nerfies.github.io">Nerfies</a> and
+            <a href="https://readout-guidance.github.io">Readout Guidance</a> project pages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
