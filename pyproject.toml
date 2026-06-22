@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grounding-ids"
+version = "0.1.0"
+description = "Reproducibility code for Uncovering Grounding IDs"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+  { name = "Hosein Hasani" },
+  { name = "Amirmohammad Izadi" },
+  { name = "Fatemeh Askari" },
+  { name = "Mobin Bagherian" },
+  { name = "Sadegh Mohammadian" },
+  { name = "Mohammad Izadi" },
+  { name = "Mahdieh Soleymani Baghshah" },
+]
+dependencies = [
+  "numpy>=1.24",
+  "Pillow>=10.0",
+]
+
+[project.optional-dependencies]
+analysis = ["matplotlib>=3.8", "pandas>=2.0", "seaborn>=0.13", "tqdm>=4.66"]
+qwen = [
+  "accelerate>=0.30",
+  "qwen-vl-utils>=0.0.8",
+  "torch>=2.2",
+  "transformers>=4.49",
+]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[project.urls]
+Paper = "https://arxiv.org/abs/2509.24072"
+Repository = "https://github.com/sharif-ml-lab/GroundingID"
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = [".venv"]

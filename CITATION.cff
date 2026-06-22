@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "Uncovering Grounding IDs: How External Cues Shape Multimodal Binding"
+type: software
+version: 0.1.0
+date-released: 2026-06-19
+url: "https://arxiv.org/abs/2509.24072"
+repository-code: "https://github.com/sharif-ml-lab/GroundingID"
+authors:
+  - given-names: Hosein
+    family-names: Hasani
+  - given-names: Amirmohammad
+    family-names: Izadi
+  - given-names: Fatemeh
+    family-names: Askari
+  - given-names: Mobin
+    family-names: Bagherian
+  - given-names: Sadegh
+    family-names: Mohammadian
+  - given-names: Mohammad
+    family-names: Izadi
+  - given-names: Mahdieh
+    family-names: Soleymani Baghshah
+preferred-citation:
+  type: conference-paper
+  title: "Uncovering Grounding IDs: How External Cues Shape Multimodal Binding"
+  year: 2026
+  collection-title: "Proceedings of the International Conference on Machine Learning"
+  authors:
+    - given-names: Hosein
+      family-names: Hasani
+    - given-names: Amirmohammad
+      family-names: Izadi
+    - given-names: Fatemeh
+      family-names: Askari
+    - given-names: Mobin
+      family-names: Bagherian
+    - given-names: Sadegh
+      family-names: Mohammadian
+    - given-names: Mohammad
+      family-names: Izadi
+    - given-names: Mahdieh
+      family-names: Soleymani Baghshah

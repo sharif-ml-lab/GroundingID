@@ -1,0 +1,33 @@
+# Datasets, checkpoints, and experiment outputs
+data/
+results/
+outputs/
+checkpoints/
+models/
+wandb/
+runs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editors and notebooks
+.DS_Store
+.idea/
+.vscode/
+.ipynb_checkpoints/
+
+# Large model files
+*.tar
+*.tar.gz
+*.tgz
+*.bin
+*.ckpt
+*.pt
+*.pth
+*.safetensors
