@@ -4,11 +4,18 @@ How External Cues Shape Multimodal Binding
 </h1>
 
 <p align="center">
+  Hosein Hasani<sup>*</sup> &middot; Amirmohammad Izadi<sup>*</sup> &middot; Fatemeh Askari<sup>*</sup> &middot; Mobin Bagherian<sup>*</sup> &middot; Sadegh Mohammadian &middot; Mohammad Izadi &middot; Mahdieh Soleymani Baghshah
+  <br>
+  Sharif University of Technology
+</p>
+
+<p align="center">
   <strong>ICML 2026 &middot; Official Code Release</strong>
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2509.24072">Paper</a> &middot;
+  <a href="https://icml.cc/virtual/2026/poster/60891">ICML 2026</a> &middot;
+  <a href="https://openreview.net/forum?id=vZuItb6BOA">OpenReview</a> &middot;
   <a href="https://arxiv.org/abs/2509.24072">arXiv:2509.24072</a> &middot;
   <a href="LICENSE">MIT License</a>
 </p>
@@ -19,18 +26,6 @@ How External Cues Shape Multimodal Binding
 </p>
 
 ---
-
-## Authors
-
-<p align="center">
-  Hosein Hasani<sup>*</sup> &middot; Amirmohammad Izadi<sup>*</sup> &middot; Fatemeh Askari<sup>*</sup> &middot; Mobin Bagherian<sup>*</sup> &middot; Sadegh Mohammadian &middot; Mohammad Izadi &middot; Mahdieh Soleymani Baghshah
-  <br>
-  Sharif University of Technology
-  <br>
-  <strong><sup>*</sup> Equal contribution</strong>
-</p>
-
-Contact: `mobinbagherian003@gmail.com`
 
 ## Overview
 
@@ -47,17 +42,17 @@ show that these identifiers causally control which object a model associates wit
 query symbol.
 
 <p align="center">
-  <img src="assets/overview.png" width="100%" alt="Conceptual overview of Grounding IDs">
+  <img src="docs/assets/overview.png" width="100%" alt="Conceptual overview of Grounding IDs">
 </p>
 
 ## Grounding ID Mechanism
 
 <p align="center">
-  <img src="assets/grounding_ids_swap_query_animation.gif" alt="Grounding IDs travel with patched object activations" width="900">
+  <img src="docs/assets/grounding_ids_swap_query_animation.gif" alt="Grounding IDs travel with patched object activations" width="900">
 </p>
 
 <p align="center">
-  <em>Activation patching transfers the hidden Grounding ID with the object representation. The query follows the transferred binding even though the visible row labels remain unchanged. <a href="assets/grounding_ids_swap_query_animation.mp4">MP4 version</a>.</em>
+  <em>Activation patching transfers the hidden Grounding ID with the object representation. The query follows the transferred binding even though the visible row labels remain unchanged. <a href="docs/assets/grounding_ids_swap_query_animation.mp4">MP4 version</a>.</em>
 </p>
 
 ## Highlights
@@ -72,11 +67,11 @@ query symbol.
 ## Activation Swapping
 
 <p align="center">
-  <img src="assets/activation-swap.png" width="76%" alt="Activation swapping procedure">
+  <img src="docs/assets/activation-swap.png" width="76%" alt="Activation swapping procedure">
 </p>
 
 <p align="center">
-  <img src="assets/activation-swap-results.png" width="58%" alt="Activation swapping log-probability results">
+  <img src="docs/assets/activation-swap-results.png" width="58%" alt="Activation swapping log-probability results">
 </p>
 
 The main intervention transfers object-region activations from a source context `c'`
